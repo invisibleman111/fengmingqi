@@ -1,0 +1,67 @@
+void setup() {
+
+pinMode(0,INPUT);//开关接口，音阶对应
+ digitalWrite(0,HIGH);
+ pinMode(1,INPUT);
+ digitalWrite(1,HIGH);
+ pinMode(2,INPUT);
+ digitalWrite(2,HIGH);
+ pinMode(3,INPUT);
+ digitalWrite(3,HIGH);
+ pinMode(4,INPUT);
+ digitalWrite(4,HIGH);
+pinMode(5,INPUT); 
+ digitalWrite(5,HIGH);
+ pinMode(6,INPUT);
+ digitalWrite(6,HIGH);
+
+ pinMode(8,OUTPUT);//led灯接口，与开关对应
+ pinMode(9,OUTPUT);
+ pinMode(10,OUTPUT); 
+ pinMode(11,OUTPUT); 
+ pinMode(12,OUTPUT); 
+ pinMode(13,OUTPUT); 
+ pinMode(14,OUTPUT); 
+
+}
+
+void loop()
+{
+ if(digitalRead(0)==LOW)//如果开关被按下，蜂鸣器发声，灯亮
+  {tone(7,2093);
+  digitalWrite(8,HIGH);
+  }
+  else if(digitalRead(1)==LOW)
+  {tone(7,2349);
+  digitalWrite(9,HIGH);
+  }
+  else if(digitalRead(2)==LOW)
+  {tone(7,2637);
+  digitalWrite(10,HIGH);
+  }
+  else if(digitalRead(3)==LOW)
+  {tone(7,2794);
+  digitalWrite(11,HIGH);
+  }
+ else if(digitalRead(4)==LOW)
+  {tone(7,3136);
+  digitalWrite(12,HIGH);
+  }
+  else if(digitalRead(5)==LOW)
+  {tone(7,3520);
+  digitalWrite(13,HIGH);
+  }
+  else if(digitalRead(6)==LOW)
+  {tone(7,3951);
+  }
+  else//否则，不发声，灯不亮
+  {noTone(7);
+  digitalWrite(13,LOW);
+  digitalWrite(12,LOW);
+  digitalWrite(11,LOW);
+  digitalWrite(10,LOW);
+  digitalWrite(9,LOW);
+  digitalWrite(8,LOW);
+  digitalWrite(14,LOW);
+    }
+}​
